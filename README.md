@@ -129,7 +129,9 @@ def test_prediction(index, W1, b1, W2, b2):
 
 ![image](https://user-images.githubusercontent.com/93427201/204083053-d898a08c-0b98-4d29-97dd-0a6cc3959e93.png)
 
+![image](https://user-images.githubusercontent.com/93427201/204084520-2856fb73-fed3-4960-9284-664f7fd6085d.png)
+
 
 ## Result:
-Thus The Implementation of Handwritten Digit Recognition using MLP Is Executed Successfully
+Thus The Implementation of Handwritten Digit Recognition using MLP Is Executed Successfully.
 
