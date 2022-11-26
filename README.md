@@ -176,6 +176,7 @@ get_accuracy(dev_predictions, Y_dev)
 
 ![203900278-679d938d-bc3a-46c5-9a9c-ba5be13754de](https://user-images.githubusercontent.com/94165377/204083444-8729e058-f9d6-4569-b6f0-37b4baa30685.jpg)
 
+![203907103-e2157aa3-08fa-4546-bd53-405891563cb5](https://user-images.githubusercontent.com/93427201/204085145-b0e24729-5692-4cd9-a06c-1f17909c20d2.png)
 
 
 ## Result:
