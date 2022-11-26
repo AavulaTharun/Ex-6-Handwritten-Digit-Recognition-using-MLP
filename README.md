@@ -12,27 +12,40 @@ Anaconda – Python 3.7 Installation / Google Colab /Jupiter Notebook
 
 
 ## Program:
-Developed by : A.Tharun
-
-Reg no:212221240003
-~~~
+```
+Developed by: A.Tharun. 
+RegisterNumber:  212221240003.
+```
+```
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
-data = pd.read_csv("train.csv")
+
+data = pd.read_csv('train.csv')
+
+```
+```
 data = np.array(data)
 m, n = data.shape
-np.random.shuffle(data)
+np.random.shuffle(data) # shuffle before splitting into dev and training sets
+
 data_dev = data[0:1000].T
 Y_dev = data_dev[0]
 X_dev = data_dev[1:n]
-X_dev = X_dev / 255
+X_dev = X_dev / 255.
+
 data_train = data[1000:m].T
 Y_train = data_train[0]
 X_train = data_train[1:n]
 X_train = X_train / 255.
 _,m_train = X_train.shape
+
+```
+```
 Y_train
+```
+```
+
 def init_params():
     W1 = np.random.rand(10, 784) - 0.5
     b1 = np.random.rand(10, 1) - 0.5
@@ -79,7 +92,9 @@ def update_params(W1, b1, W2, b2, dW1, db1, dW2, db2, alpha):
     W2 = W2 - alpha * dW2  
     b2 = b2 - alpha * db2    
     return W1, b1, W2, b2
-    def get_predictions(A2):
+```
+```
+def get_predictions(A2):
     return np.argmax(A2, 0)
 
 def get_accuracy(predictions, Y):
@@ -95,11 +110,15 @@ def gradient_descent(X, Y, alpha, iterations):
         if i % 10 == 0:
             print("Iteration: ", i)
             predictions = get_predictions(A2)
-      test_prediction(0, W1, b1, W2, b2)print(get_accuracy(predictions, Y))
+            print(get_accuracy(predictions, Y))
     return W1, b1, W2, b2
-    W1, b1, W2, b2 = gradient_descent(X_train, Y_train, 0.10, 500)
-    def make_predictions(X, W1, b1, W2, b2):
-    A2 = forward_prop(W1, b1, W2, b2, X)
+ ```
+ ```
+ W1, b1, W2, b2 = gradient_descent(X_train, Y_train, 0.10, 500)
+ ```
+ ```
+ def make_predictions(X, W1, b1, W2, b2):
+    _, _, _, A2 = forward_prop(W1, b1, W2, b2, X)
     predictions = get_predictions(A2)
     return predictions
 
@@ -114,24 +133,40 @@ def test_prediction(index, W1, b1, W2, b2):
     plt.gray()
     plt.imshow(current_image, interpolation='nearest')
     plt.show()
+    ```
+    ```
     test_prediction(0, W1, b1, W2, b2)
-~~~
-
+test_prediction(1, W1, b1, W2, b2)
+test_prediction(2, W1, b1, W2, b2)
+test_prediction(3, W1, b1, W2, b2)
+```
+```
+ dev_predictions = make_predictions(X_dev, W1, b1, W2, b2)
+get_accuracy(dev_predictions, Y_dev)
+```
 
 ## Output :
-![204022112-b9f912ce-fdac-4f1a-b445-4bea64b453df](https://user-images.githubusercontent.com/93427201/204082984-6725cab0-c5d5-438b-9bb7-78b2b33a753e.png)
 
-![204022117-acdd3470-98c5-4c47-9c60-8489df6b3a5d](https://user-images.githubusercontent.com/93427201/204082994-2c665b2a-c98e-488a-8426-6660be32dd79.png)
+![203900084-784dec43-a206-4697-aa07-9140e30928f2](https://user-images.githubusercontent.com/94165377/204083403-cd067fd9-6630-4b0f-8d26-56cf6434f7da.jpg)
 
-![204022125-17271988-0266-4da3-b24a-a001559a2352](https://user-images.githubusercontent.com/93427201/204083001-ad240ceb-ddae-4f49-8cb4-d7cd99962bb6.png)
 
-![image](https://user-images.githubusercontent.com/93427201/204083068-0b3b0882-eb41-45a2-99f3-670bdbd7eebd.png)
 
-![image](https://user-images.githubusercontent.com/93427201/204083053-d898a08c-0b98-4d29-97dd-0a6cc3959e93.png)
+![203900106-96070289-5ec9-4e4e-a063-3feae26ed45c](https://user-images.githubusercontent.com/94165377/204083404-269e76c8-73c7-477d-bbf5-469d94425a52.jpg)
 
-![image](https://user-images.githubusercontent.com/93427201/204084520-2856fb73-fed3-4960-9284-664f7fd6085d.png)
+![203900132-e7a5d6f0-292e-4ec1-88a7-fa85a397b73f](https://user-images.githubusercontent.com/94165377/204083405-8d5bb281-6577-4a08-b427-de7214a024b4.jpg)
+
+
+![203900151-e483c6a7-9ef1-43f5-95d6-27a4f809906a](https://user-images.githubusercontent.com/94165377/204083410-730a933b-ffd3-4b7f-bd70-f217cff6b4e3.jpg)
+![203900172-b75f78dd-f44f-4bfe-8dff-53df9c2d243e](https://user-images.githubusercontent.com/94165377/204083412-0ff30682-004d-4ed0-9309-bd6564cf5906.jpg)
+![203900190-7a0a5632-2190-47b6-a008-c9123bf4fa73](https://user-images.githubusercontent.com/94165377/204083417-386c31cc-7f85-4398-b3af-891b7e25696c.jpg)
+
+![203900200-2ce99bec-d506-4bf1-9df8-fccd0e50ef9f](https://user-images.githubusercontent.com/94165377/204083428-71044a03-ff45-4596-a19c-182f55b05193.jpg)
+
+![203900214-ee19f8c7-f7ea-44be-9529-a8d2ba5cccd8](https://user-images.githubusercontent.com/94165377/204083441-e3b1fad0-4074-4682-869e-b030214cc9c1.jpg)
+
+![203900278-679d938d-bc3a-46c5-9a9c-ba5be13754de](https://user-images.githubusercontent.com/94165377/204083444-8729e058-f9d6-4569-b6f0-37b4baa30685.jpg)
+
 
 
 ## Result:
 Thus The Implementation of Handwritten Digit Recognition using MLP Is Executed Successfully.
-
