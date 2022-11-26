@@ -131,5 +131,5 @@ def test_prediction(index, W1, b1, W2, b2):
 
 
 ## Result:
-Thus The Implementation of Handwritten Digit Recognition using MLP Is Executed Successfully.
+Thus The Implementation of Handwritten Digit Recognition using MLP Is Executed Successfully
 
